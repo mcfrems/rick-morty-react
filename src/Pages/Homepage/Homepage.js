@@ -8,15 +8,14 @@ function Homepage() {
     //create state for characters
     const [characters, setCharacters] = useState([])
 
-
     useEffect(
         ()=>{
-            //console.log("Homepage loaded");
+            // console.log("Homepage loaded");
             axios.get("https://rickandmortyapi.com/api/character")
-            .then(res=> (
-                console.log(res.data.results);
-                setCharacters(res.data.results);
-            ))
+            .then(res=> {
+                console.log(res.data.results)
+                setCharacters(res.data.results)
+            })
             .catch(err => console.log(err))
 
         },[]
@@ -25,12 +24,15 @@ function Homepage() {
 
   return (
     <div className='Home-container'>
-        <div className='Characters-container'>
         <h1>Main Characters</h1>
+        <div className='Characters-container'>
         {
-            characters.map(item=><p><CharacterCard
-                            character={item} /></p>
+            characters.map(item=><CharacterCard 
+                            character={item}/>
             )
+            // characters.map(item=><p><CharacterCard
+            //                 character={item.name} /></p>
+            // )
         }
         </div>
     </div>

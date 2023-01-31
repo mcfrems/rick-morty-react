@@ -1,11 +1,11 @@
 import React from 'react'
 import './CharacterCard.css'
 
-function CharacterCard(props) {
+function CharacterCard({character}) {
   return (
     <div className='character-card'>
         <img src={character.image} />
-        <p>{props.character.name}</p>
+        <p>{character.name}</p>
         <button>See Details</button>
     </div>
   )
