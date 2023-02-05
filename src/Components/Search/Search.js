@@ -3,7 +3,7 @@ import './Search.css'
 import axios from 'axios'
 
 
-function Search(setCharacters) {
+function Search({setCharacters}) {
     //create state to hold search input
     const [searchValue, setSearchValue] = React.useState("")
 
