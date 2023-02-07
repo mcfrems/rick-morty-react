@@ -31,6 +31,7 @@ function Homepage() {
         <div className='Characters-container'>
         {
             characters.map(item=><CharacterCard 
+                            key={item.id}
                             character={item}/>
             )
             // characters.map(item=><p><CharacterCard
