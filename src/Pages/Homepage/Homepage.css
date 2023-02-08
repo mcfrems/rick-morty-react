@@ -2,3 +2,12 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.Home-container {
+    background-color: white;
+}
+
+.Home-dark{
+    background-color: black;
+    color: white;
+}

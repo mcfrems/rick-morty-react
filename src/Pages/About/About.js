@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './About.css'
 import banner from '../../Assets/banner.jpeg'
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function About() {
+
+  //extract theme values
+  const {darkMode, setDarkMode} = useContext(ThemeContext)
+
   return (
-    <div className='about-container'>
+    <div className={darkMode?'about-container about-dark' : 'about-container' }>
         <h1>About Us</h1>
         <img src={banner} />
         <p>

@@ -26,7 +26,9 @@ function Header() {
         </div>
         <div className="message">
           <p>Welcome {userName}  </p>
-          <button onClick={handleTheme}>Button</button>
+          <button onClick={handleTheme}>
+            {darkMode? "Light Mode" : "Dark Mode"}
+          </button>
         </div>
 
     </div>

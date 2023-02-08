@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './CharacterDetails.css'
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 
 function CharacterDetails() {
+    //extract theme values
+    const {darkMode, setDarkMode} = useContext(ThemeContext)
+   
     //I need the id from the url
     const {id} = useParams();
 
@@ -24,7 +28,7 @@ function CharacterDetails() {
     )
 
   return (
-    <div className="details-container"> 
+    <div className={darkMode?'details-container details-dark' : 'details-container' }>
         <img src={character?.image}/>
         <div className="char-info">
             <h3>{character?.name}</h3>
